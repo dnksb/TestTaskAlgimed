@@ -22,7 +22,7 @@ namespace TestTaskDb
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
-            if(username == null || password == null)
+            if(username == "" || password == "")
             {
                 MessageBox.Show("неправильное введен логин или пароль");
                 return;
@@ -38,7 +38,7 @@ namespace TestTaskDb
 
             try
             {
-                DataBaseController.Instance.ExcecuteWithQuery($"INSERT INTO Users(Username, Password) VALUES('{username}', '{password}')");
+                DataBaseController.Instance.ExcecuteWithQuery($"INSERT INTO Users(Username, Password) VALUES('{username}', '{password.GetHashCode()}')");
                 DataBaseController.Instance.Auth = true;
                 this.Close();
             }

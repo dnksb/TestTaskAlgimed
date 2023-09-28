@@ -20,3 +20,5 @@ C:\Users\New\source\repos\TestTaskDb\TestTaskDb\obj\Debug\TestTaskDb.Authorizati
 C:\Users\New\source\repos\TestTaskDb\TestTaskDb\obj\Debug\TestTaskDb.MainForm.resources
 C:\Users\New\source\repos\TestTaskDb\TestTaskDb\obj\Debug\TestTaskDb.Registration.resources
 C:\Users\New\source\repos\TestTaskDb\TestTaskDb\obj\Debug\TestTaskDb.csproj.ResolveComReference.cache
+C:\Users\New\source\repos\TestTaskDb\TestTaskDb\obj\Debug\TestTaskDb.StepsInput.resources
+C:\Users\New\source\repos\TestTaskDb\TestTaskDb\obj\Debug\TestTaskDb.ModesInput.resources

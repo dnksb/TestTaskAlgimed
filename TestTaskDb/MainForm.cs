@@ -27,6 +27,8 @@ namespace TestTaskDb
                 var Modes = DataBaseController.Instance.ExcecuteWithQuery("SELECT * FROM Modes");
                 
                 dataGridView1.Rows.Clear();
+                dataGridView1.Columns.Clear();
+
                 dataGridView1.Columns.Add("ID", "ID");
                 dataGridView1.Columns.Add("Name", "Name");
                 dataGridView1.Columns.Add("MaxBottleNumber", "MaxBottleNumber");
@@ -42,12 +44,15 @@ namespace TestTaskDb
                     dataGridView1.Rows[i].Cells[3].Value = Modes.GetInt32(3);
                     i++;
                 }
+                numericUpDown1.Maximum = i;
             }
             else if (table == "Steps")
             {
                 var Modes = DataBaseController.Instance.ExcecuteWithQuery("SELECT * FROM Steps");
 
                 dataGridView1.Rows.Clear();
+                dataGridView1.Columns.Clear();
+
                 dataGridView1.Columns.Add("ID", "ID");
                 dataGridView1.Columns.Add("ModeId", "ModeId");
                 dataGridView1.Columns.Add("Timer", "Timer");
@@ -69,6 +74,7 @@ namespace TestTaskDb
                     dataGridView1.Rows[i].Cells[6].Value = Modes.GetInt32(6);
                     i++;
                 }
+                numericUpDown1.Maximum = i;
             }
         }
 
@@ -76,14 +82,20 @@ namespace TestTaskDb
         {
             Registration window = new Registration();
             window.ShowDialog();
-            loadTable("Modes");
+            if (DataBaseController.Instance.Auth)
+            {
+                loadTable("Modes");
+            }
         }
 
         private void авторизацияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Authorization window = new Authorization();
             window.ShowDialog();
-            loadTable("Modes");
+            if (DataBaseController.Instance.Auth)
+            {
+                loadTable("Modes");
+            }
         }
 
         private void удалитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -93,6 +105,19 @@ namespace TestTaskDb
                 MessageBox.Show("вы не авторизиарованы");
                 return;
             }
+            if (Mode)
+            {
+                DataBaseController.Instance.ExcecuteNonQuery(
+                    $"DELETE FROM Modes WHERE ID = {numericUpDown1.Value}");
+                loadTable("Modes");
+            }
+            else
+            {
+                DataBaseController.Instance.ExcecuteNonQuery(
+                    $"DELETE FROM Steps WHERE ID = {numericUpDown1.Value}");
+                loadTable("Steps");
+            }
+
         }
 
         private void вставитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +127,19 @@ namespace TestTaskDb
                 MessageBox.Show("вы не авторизиарованы");
                 return;
             }
+
+            if (Mode)
+            {
+                ModesInput window = new ModesInput(true);
+                window.ShowDialog();
+                loadTable("Modes");
+            }
+            else
+            {
+                StepsInput window = new StepsInput(true);
+                window.ShowDialog();
+                loadTable("Steps");
+            }
         }
 
         private void зменитьЗаписьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,6 +148,19 @@ namespace TestTaskDb
             {
                 MessageBox.Show("вы не авторизиарованы");
                 return;
+            }
+
+            if (Mode)
+            {
+                ModesInput window = new ModesInput(false);
+                window.ShowDialog();
+                loadTable("Modes");
+            }
+            else
+            {
+                StepsInput window = new StepsInput(false);
+                window.ShowDialog();
+                loadTable("Steps");
             }
         }
 

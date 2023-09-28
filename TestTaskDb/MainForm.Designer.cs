@@ -34,15 +34,18 @@
             this.modesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stepsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.действияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.вставитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.зменитьЗаписьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.импортExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.профильToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.регистрацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.авторизацияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -94,20 +97,12 @@
             // действияToolStripMenuItem
             // 
             this.действияToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.удалитьЗаписьToolStripMenuItem,
             this.вставитьЗаписьToolStripMenuItem,
             this.зменитьЗаписьToolStripMenuItem,
             this.импортExcelToolStripMenuItem});
             this.действияToolStripMenuItem.Name = "действияToolStripMenuItem";
             this.действияToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.действияToolStripMenuItem.Text = "действия";
-            // 
-            // удалитьЗаписьToolStripMenuItem
-            // 
-            this.удалитьЗаписьToolStripMenuItem.Name = "удалитьЗаписьToolStripMenuItem";
-            this.удалитьЗаписьToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.удалитьЗаписьToolStripMenuItem.Text = "удалить запись";
-            this.удалитьЗаписьToolStripMenuItem.Click += new System.EventHandler(this.удалитьЗаписьToolStripMenuItem_Click);
             // 
             // вставитьЗаписьToolStripMenuItem
             // 
@@ -153,21 +148,61 @@
             this.авторизацияToolStripMenuItem.Text = "авторизация";
             this.авторизацияToolStripMenuItem.Click += new System.EventHandler(this.авторизацияToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 202);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "удалить запись №";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(246, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "удалить";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.удалитьЗаписьToolStripMenuItem_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(119, 198);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown1.TabIndex = 6;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 215);
+            this.ClientSize = new System.Drawing.Size(473, 235);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximumSize = new System.Drawing.Size(489, 254);
-            this.MinimumSize = new System.Drawing.Size(489, 254);
+            this.MaximumSize = new System.Drawing.Size(489, 274);
+            this.MinimumSize = new System.Drawing.Size(489, 274);
             this.Name = "MainForm";
             this.Text = "Программа";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,7 +214,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem таблицыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem действияToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьЗаписьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem вставитьЗаписьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem зменитьЗаписьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem профильToolStripMenuItem;
@@ -188,6 +222,9 @@
         private System.Windows.Forms.ToolStripMenuItem modesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stepsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem импортExcelToolStripMenuItem;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
