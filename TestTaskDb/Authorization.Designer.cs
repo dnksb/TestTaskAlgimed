@@ -41,7 +41,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 9;
-            this.button1.Text = "регистрация";
+            this.button1.Text = "авторизация";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // textBox2
